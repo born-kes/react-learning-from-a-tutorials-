@@ -1,11 +1,9 @@
-import React from 'react';
 import ReactDOM from 'react-dom';
+import React from 'react';
 // import * as serviceWorker from './serviceWorker';
+import {Game} from './game';
 
-ReactDOM.render( <div>
-    <h1>Hello Word!!</h1>
-    <p> i co teraz?</p>
-</div> , document.getElementById('content') );
+ReactDOM.render( <Game /> , document.getElementById('root') );
 
 
 // serviceWorker.unregister(); // Disable to work offline. This can make it difficult to remove errors
