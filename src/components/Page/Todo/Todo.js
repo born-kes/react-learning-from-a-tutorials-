@@ -1,5 +1,6 @@
 import * as React from "react";
-import TodoItem from "./TodoItem";
+import TodoItem from "./components/TodoItem";
+import './components/index.css';
 
 class Todo extends React.Component {
     state = {

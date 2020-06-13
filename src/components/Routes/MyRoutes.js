@@ -6,6 +6,7 @@ import {
     Route,
     Link
 } from "react-router-dom";
+import Todo from "../Page/Todo/Todo";
 
 const MyRoutes = () => {
     return (
@@ -16,16 +17,21 @@ const MyRoutes = () => {
                         <Link to="/">Home</Link>
                     </li>
                     <li>
-                        <Link to="/Home/">Page Home</Link>
+                        <Link to="/Home">Page Home</Link>
+                    </li>
+                    <li>
+                        <Link to="/Todo">ToDo list</Link>
                     </li>
                 </ul>
             </nav>
         <Switch>
             <Route path="/Todo">
+                <Todo />
             </Route>
             <Route path="/Game">
             </Route>
             <Route path="/Home">
+                <Home />
             </Route>
             <Route path="/">
                 <Home />
