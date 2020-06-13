@@ -16,7 +16,7 @@ const MyRoutes = () => {
                         <Link to="/">Home</Link>
                     </li>
                     <li>
-                        <Link to="/Home">Page Home</Link>
+                        <Link to="/Home/">Page Home</Link>
                     </li>
                 </ul>
             </nav>
