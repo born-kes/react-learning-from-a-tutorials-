@@ -1,10 +1,10 @@
 import React from 'react';
-import Todo from "./components/Todo";
+import MyRoutes from "./components/Routes/MyRoutes";
 
 function App() {
   return (
     <div className="App">
-      <Todo />
+        <MyRoutes />
     </div>
   );
 }
