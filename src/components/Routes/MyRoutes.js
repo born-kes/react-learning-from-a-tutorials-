@@ -7,6 +7,7 @@ import {
     Link
 } from "react-router-dom";
 import Todo from "../Page/Todo/Todo";
+import {Game} from "../Page/Game/Game";
 
 const MyRoutes = () => {
     return (
@@ -22,6 +23,9 @@ const MyRoutes = () => {
                     <li>
                         <Link to="/Todo">ToDo list</Link>
                     </li>
+                    <li>
+                        <Link to="/Game">Game</Link>
+                    </li>
                 </ul>
             </nav>
         <Switch>
@@ -29,6 +33,7 @@ const MyRoutes = () => {
                 <Todo />
             </Route>
             <Route path="/Game">
+                <Game />
             </Route>
             <Route path="/Home">
                 <Home />
