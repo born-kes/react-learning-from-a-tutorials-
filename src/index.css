@@ -1,0 +1,86 @@
+div {
+    /*margin: 10px;*/
+    /*padding: 10px;*/
+}
+#root{
+    height: 100vh;
+}
+#Nav{
+    height: 10vh;
+
+}
+#Nav ul{
+    list-style-type: none;
+}
+#Nav li {
+    display: inline;
+    padding: 5px;
+}
+
+.-container {
+    /*height: 90%;*/
+    display: grid;
+    justify-items: stretch;
+    grid-template-columns: auto  70vh auto;
+    grid-template-rows: 20vh 20vh 20vh 20vh;
+    grid-template-areas:
+    "TimeBox TimeBox TimeBox"
+    "Chat ActiveBox Music1"
+    "Notes ActiveBox Music2"
+"Maps ActiveBox .";
+    width: 100%;
+    justify-items: stretch;
+    align-items: stretch;
+}
+.container div {
+
+}
+#TimeBox{
+    grid-area: TimeBox;
+    background-color: blue;
+}
+#Music1{
+    grid-area: Music1;
+}
+#Music2{
+    grid-area: Music2;
+}
+#Chat {
+    grid-area: Chat;
+}
+#Maps  {
+    grid-area: Maps;
+}
+#Notes {
+    grid-area: Notes;
+}
+#ActiveBox{
+    grid-area: ActiveBox;
+}
+img{
+    height: 80%;
+}
+
+container1{
+    padding: 15px;
+
+}
+.svg {
+    cursor: pointer;
+}
+.svg img {
+    width: 35px;
+    height: 35px;
+}
+.box:after {
+    content:'';
+    display:block;
+    clear:both;
+}
+.box div {
+    float:left;
+    padding: 5px;
+}
+.boxList div {
+    padding: 2px;
+}
