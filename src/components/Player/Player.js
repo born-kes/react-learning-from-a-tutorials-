@@ -3,11 +3,6 @@ import ReactPlayer from "react-audio-player";
 
 export class Player extends Component {
 
-    constructor(props) {
-        super(props);
-        this.ref = React.createRef();
-    }
-
     render() {
         const prefix = this.props.prefix;
         const music = this.props.music;
@@ -19,13 +14,8 @@ export class Player extends Component {
                     id={id}
                     src={`${path}${music.src}`}
                     title={music.name}
-
-                     controls // TODO active view controllers
-
                     volume = {0.5}
-                    ref={this.ref}
-                    // TODO get ref.current
-                    // ref={(el)=> music.ref = el }
+                    ref={(el)=> {this.ref = el} }
                 />
                 <div className={`svg ${music.play}`} onClick={()=>this.start(id, music)}>
                     { (music.icon)? (
@@ -39,27 +29,12 @@ export class Player extends Component {
     }
 
     start(id, music) {
-        console.log(this.ref)
-            // TODO look ref and current.audioEl
-        console.log( this.ref.current.audioEl);
-        
         music.play = !music.play;
-        // const newMusicList = Object.assign([], this.state.activeMusic);
-        // newMusicList[index].play = !newMusicList[index].play;
-        // this.setState({ activeMusic: newMusicList });
 
-        // TODO This is working
-        const el = document.getElementById(id);
-        // myśle że tego nie robi się w ten sposób
-        console.log(id, el)
         if(music.play){
-            el.play()
+            this.ref.audioEl.current.play()
         }else{
-            el.pause()
+            this.ref.audioEl.current.pause()
         }
-        // TODO This don't work
-        // this.ref.play()
-        // this.ref.current.play()
-        // this.ref.current.audioEl.play()
     }
 }
