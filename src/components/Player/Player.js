@@ -3,21 +3,25 @@ import ReactPlayer from "react-audio-player";
 
 export class Player extends Component {
 
+    constructor(props) {
+        super(props);
+        this.ref = React.createRef();
+    }
 
     render() {
-        console.log('player',this.props)
+        const prefix = this.props.prefix;
         const music = this.props.music;
-        const index = this.props.index;
         const path = this.props.path;
-        const id = `player${music.id}`;
+        const id = `${prefix}-${music.id}`;
         return (
-            <div key={`player${music.id}`}>
+            <div key={id}>
                 <ReactPlayer
                     id={id}
                     src={`${path}${music.src}`}
                     title={music.name}
                     // controls
                     volume = {0.5}
+                    ref={this.ref}
                     // ref={(el)=> music.ref = el }
                 />
                 <div className={`svg ${music.play}`} onClick={()=>this.start(id, music)}>
@@ -26,13 +30,14 @@ export class Player extends Component {
                         ):(
                         <div>{music.name}</div>
                     )}
-
                 </div>
             </div>
         )
     }
 
     start(id, music) {
+        console.log(this.ref)
+
         music.play = !music.play;
         // const newMusicList = Object.assign([], this.state.activeMusic);
         // newMusicList[index].play = !newMusicList[index].play;

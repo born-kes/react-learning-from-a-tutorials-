@@ -8,6 +8,9 @@ export class Nav extends Component {
             <div id={`Nav`}>
                 <ul>
                     <li>
+                        <Link to="/">... </Link>
+                    </li>
+                    <li>
                         <Link to="/TimeBox">TimeBox </Link>
                     </li>
                     <li>

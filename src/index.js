@@ -19,26 +19,28 @@ import {MusicProvider, NoisliProvider} from "./components/Content/Noisli";
 ReactDOM.render( <div>
     <Router>
         <Nav />
-        <div className={`container`}>
+        {/*<div className={`container`} >*/}
+        <div>
             <Switch>
-                {/*<Route path="/TimeBox" component={TimeBox} />*/}
-                {/*<Route path="/Music1" component={()=>(<NoisliProvider><Music1 /></NoisliProvider>)} />*/}
-                {/*<Route path="/Music2" component={<MusicProvider>Music2</MusicProvider>} />*/}
-                {/*<Route path="/Maps" component={Maps} />*/}
-                {/*<Route path="/Chat" component={Chat} />*/}
+                <Route path="/TimeBox" component={TimeBox} />
+                <Route path="/Music1" component={()=>(<NoisliProvider><Music1 /></NoisliProvider>)} />
+                <Route path="/Music2" component={()=>(<MusicProvider><Music2 /></MusicProvider>)} />
+                <Route path="/Maps" component={Maps} />
+                <Route path="/Chat" component={Chat} />
                 <Route path="/Notes" component={Notes} />
+                <Route path="/" exact >
+                    <div>
+                        <TimeBox />
+                        <MusicProvider><Music2 /></MusicProvider>
+                        <NoisliProvider><Music1 /></NoisliProvider>
+                        <Maps />
+                        <Chat />
+                        <Notes />
+                    </div>
+                </Route>
             </Switch>
         </div>
     </Router>
-    <div>
-        {/*<TimeBox />*/}
-         <MusicProvider><Music2 /></MusicProvider>
-         <NoisliProvider><Music1 /></NoisliProvider>
-        {/*<Maps />*/}
-        {/*<Chat />*/}
-        {/*<Notes />*/}
-    {/*    */}
-    </div>
 </div> , document.getElementById('root') );
 
 

@@ -1,7 +1,7 @@
 // @flow
-import React, {Component, useContext} from 'react'
+import React, { useContext } from 'react'
 import { NoisliContext } from "./Content/Noisli";
-import {Player} from "./Player/Player";
+import { Player } from "./Player/Player";
 
 export const Music1 = () => {
 
@@ -11,8 +11,8 @@ export const Music1 = () => {
         <div id={`Music1`}>
             <h1>Music1</h1>
             <div className='box'>
-                { noisli.map((music, index)=>{
-                        return <Player key={music.id} index={index} music={music} path="/Noisli/" />
+                { noisli.map((music)=>{
+                        return <Player key={music.id} prefix={`noisli`} music={music} path="/Noisli/" />
                     }
                 )}
             </div>
