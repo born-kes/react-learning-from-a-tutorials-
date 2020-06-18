@@ -1,7 +1,7 @@
 // @flow
 import React, { useContext} from 'react';
 import {Player} from "./Player/Player";
-import {MusicContext} from "./Content/Noisli";
+import {MusicContext} from "./Content/waveData";
 
 export const Music2 = () => {
         const [music, setMusic] = useContext(MusicContext);

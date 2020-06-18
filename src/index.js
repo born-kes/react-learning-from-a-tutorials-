@@ -13,13 +13,12 @@ import {Chat} from "./components/Chat";
 import {Notes} from "./components/Notes";
 import {Nav} from "./components/Nav";
 import './index.css';
-import {MusicProvider, NoisliProvider} from "./components/Content/Noisli";
+import {MusicProvider, NoisliProvider} from "./components/Content/waveData";
 // import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render( <div>
     <Router>
         <Nav />
-        {/*<div className={`container`} >*/}
         <div>
             <Switch>
                 <Route path="/TimeBox" component={TimeBox} />
@@ -29,7 +28,7 @@ ReactDOM.render( <div>
                 <Route path="/Chat" component={Chat} />
                 <Route path="/Notes" component={Notes} />
                 <Route path="/" exact >
-                    <div>
+                    <div className={`container`}>
                         <TimeBox />
                         <MusicProvider><Music2 /></MusicProvider>
                         <NoisliProvider><Music1 /></NoisliProvider>

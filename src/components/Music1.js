@@ -1,7 +1,8 @@
 // @flow
 import React, { useContext } from 'react'
-import { NoisliContext } from "./Content/Noisli";
+import { NoisliContext } from "./Content/waveData";
 import { Player } from "./Player/Player";
+
 
 export const Music1 = () => {
 
