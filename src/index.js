@@ -14,6 +14,7 @@ import {Notes} from "./components/Notes";
 import {Nav} from "./components/Nav";
 import './index.css';
 import {MusicProvider, NoisliProvider} from "./components/Content/waveData";
+import {MapsProvider} from "./components/Content/mapsData";
 // import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render( <div>
@@ -24,7 +25,7 @@ ReactDOM.render( <div>
                 <Route path="/TimeBox" component={TimeBox} />
                 <Route path="/Music1" component={()=>(<NoisliProvider><Music1 /></NoisliProvider>)} />
                 <Route path="/Music2" component={()=>(<MusicProvider><Music2 /></MusicProvider>)} />
-                <Route path="/Maps" component={Maps} />
+                <Route path="/Maps" component={()=>(<MapsProvider><Maps /></MapsProvider>)} />
                 <Route path="/Chat" component={Chat} />
                 <Route path="/Notes" component={Notes} />
                 <Route path="/" exact >
@@ -32,7 +33,7 @@ ReactDOM.render( <div>
                         <TimeBox />
                         <MusicProvider><Music2 /></MusicProvider>
                         <NoisliProvider><Music1 /></NoisliProvider>
-                        <Maps />
+                        <MapsProvider><Maps /></MapsProvider>
                         <Chat />
                         <Notes />
                     </div>
