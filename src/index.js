@@ -34,7 +34,7 @@ ReactDOM.render( <div>
                         <MusicProvider><Music2 /></MusicProvider>
                         <NoisliProvider><Music1 /></NoisliProvider>
                         <MapsProvider><Maps /></MapsProvider>
-                        <Chat />
+                        <MapsProvider><Chat /></MapsProvider>
                         <Notes />
                     </div>
                 </Route>

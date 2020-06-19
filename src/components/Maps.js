@@ -25,8 +25,8 @@ export const Maps = () => {
         >
             {
                 maps.map((map)=>(
-                    <div>
-             <img src={map.src} onDragStart={handleOnDragStart} className="yours-custom-class" alt={map.name} key={map.id} />
+                    <div key={map.id}>
+             <img src={map.src} onDragStart={handleOnDragStart} className="yours-custom-class" alt={map.name} />
                         <p>{map.name} </p>
                     </div>
                 ))
