@@ -1,3 +1,6 @@
+* {
+    box-sizing: border-box;
+}
 div {
     /*margin: 10px;*/
     /*padding: 10px;*/
@@ -21,18 +24,19 @@ div {
     /*height: 90%;*/
     display: grid;
     justify-items: stretch;
-    grid-template-columns: auto  70vh auto;
+    grid-template-columns: auto 70vh auto;
     grid-template-rows: auto auto auto auto;
     grid-template-areas:
-    "TimeBox TimeBox TimeBox"
-    "Chat ActiveBox Music1"
-    "Notes ActiveBox Music2"
-"Maps ActiveBox .";
+    "Chat TimeBox Music1"
+    "Chat Pulpit Music1"
+    "Notes Pulpit Music2"
+	"Maps Pulpit .";
     width: 100%;
     justify-items: stretch;
     align-items: stretch;
 }
 .container div {
+    z-index: 2;
 
 }
 #TimeBox{
@@ -54,8 +58,8 @@ div {
 #Notes {
     grid-area: Notes;
 }
-#ActiveBox{
-    grid-area: ActiveBox;
+#Pulpit{
+    grid-area: Pulpit;
 }
 img{
     height: 70px;
@@ -81,7 +85,7 @@ container1{
 }
 .box div {
     float:left;
-    padding: 5px;
+    padding: 2px;
 }
 .boxList div {
     padding: 2px;

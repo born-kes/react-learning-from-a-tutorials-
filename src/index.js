@@ -15,6 +15,7 @@ import {Nav} from "./components/Nav";
 import './index.css';
 import {MusicProvider, NoisliProvider} from "./components/Content/waveData";
 import {MapsProvider} from "./components/Content/mapsData";
+import {Pulpit} from "./components/Pulpit";
 // import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render( <div>
@@ -35,6 +36,7 @@ ReactDOM.render( <div>
                         <NoisliProvider><Music1 /></NoisliProvider>
                         <MapsProvider><Maps /></MapsProvider>
                         <MapsProvider><Chat /></MapsProvider>
+                        <Pulpit />
                         <Notes />
                     </div>
                 </Route>
