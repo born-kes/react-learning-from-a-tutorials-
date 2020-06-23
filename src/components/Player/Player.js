@@ -1,23 +1,34 @@
 import React, {Component} from 'react'
 import ReactPlayer from "react-audio-player";
+import {PlayerProgressComponent} from "./PlayerProgress";
 
 export class Player extends Component {
 
     constructor(props) {
         super(props);
+        this.state = {
+            play: false,
+            progress:1,
+            timer:0
+        }
         this.play = false;
         this.timer = 0;
+        this.time = 0;
         this.delay = 500;
         this.prevent = false;
         this.repeat = false;
+        this.child = ()=>{return 'pa'};
     }
     render() {
         const prefix = this.props.prefix;
         const music = this.props.music;
         const path = this.props.path;
         const id = `${prefix}-${music.id}`;
+        const style = {
+            width: `${this.state.progress}%`
+        }
         return (
-            <div key={id}>
+            <div key={id} style={{position:"relative"}}>
                 <ReactPlayer
                     id={id}
                     src={`${path}${music.src}`}
@@ -31,6 +42,7 @@ export class Player extends Component {
                     onClick={()=>this.handleClick()}
                     onDoubleClick={()=>this.changeRepeat() }
                 >
+                    <PlayerProgressComponent progress={this.state.progress} />
                     { (music.icon)? (
                         <img src={`${path}${music.icon}`} alt={music.name} title={music.name} />
                         ):(
@@ -39,6 +51,19 @@ export class Player extends Component {
                 </div>
             </div>
         )
+    }
+
+    progress () {
+        if(this.play){
+            this.timerID = setInterval(
+                () => {
+                    this.setState({progress:this.state.progress + 1});
+                },
+                parseInt(this.ref.audioEl.current.duration*10)
+            );
+        }else{
+            clearInterval(this.timerID);
+        }
     }
 
     start() {
@@ -50,14 +75,17 @@ export class Player extends Component {
         }else{
             this.ref.audioEl.current.pause()
         }
+        this.progress();
     }
     ended() {
         if(this.repeat){
             this.ref.audioEl.current.play()
             this.playRepeat();
         }else{
-            this.ref.audioEl.current.pause()
+            clearInterval(this.timerID);
+            // this.ref.audioEl.current.pause()
         }
+        this.setState({progress:0})
     }
     handleClick() {
         let me = this;
@@ -76,11 +104,11 @@ export class Player extends Component {
     }
     playRepeat() {
         if(this.repeat) {
-            let timeToEnd = parseInt((this.ref.audioEl.current.duration - this.ref.audioEl.current.currentTime) * 1000) - 1;
-            console.log('time to end', timeToEnd)
+            const timeToEnd = parseInt((this.ref.audioEl.current.duration - this.ref.audioEl.current.currentTime) * 1000) - 1;
 
             setTimeout(() => {
                 this.ref.audioEl.current.currentTime = 0
+                this.setState({progress:0})
             }, timeToEnd);
         }
     }
