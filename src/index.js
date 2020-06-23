@@ -13,34 +13,35 @@ import {Chat} from "./components/Chat";
 import {Notes} from "./components/Notes";
 import {Nav} from "./components/Nav";
 import './index.css';
-import {MusicProvider, NoisliProvider} from "./components/Content/waveData";
-import {MapsProvider} from "./components/Content/mapsData";
 import {Pulpit} from "./components/Pulpit";
+import {DataProvider} from "./components/Content/Data";
 // import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render( <div>
     <Router>
         <Nav />
         <div>
+            <DataProvider>
             <Switch>
                 <Route path="/TimeBox" component={TimeBox} />
-                <Route path="/Music1" component={()=>(<NoisliProvider><Music1 /></NoisliProvider>)} />
-                <Route path="/Music2" component={()=>(<MusicProvider><Music2 /></MusicProvider>)} />
-                <Route path="/Maps" component={()=>(<MapsProvider><Maps /></MapsProvider>)} />
+                <Route path="/Music1" component={()=>(<Music1 />)} />
+                <Route path="/Music2" component={()=>(<Music2 />)} />
+                <Route path="/Maps" component={()=>(<Maps />)} />
                 <Route path="/Chat" component={Chat} />
                 <Route path="/Notes" component={Notes} />
                 <Route path="/" exact >
                     <div className={`container`}>
                         <TimeBox />
-                        <MusicProvider><Music2 /></MusicProvider>
-                        <NoisliProvider><Music1 /></NoisliProvider>
-                        <MapsProvider><Maps /></MapsProvider>
-                        <MapsProvider><Chat /></MapsProvider>
+                        <Music2 />
+                        <Music1 />
+                        <Maps />
+                        <Chat />
                         <Pulpit />
                         <Notes />
                     </div>
                 </Route>
             </Switch>
+            </DataProvider>
         </div>
     </Router>
 </div> , document.getElementById('root') );

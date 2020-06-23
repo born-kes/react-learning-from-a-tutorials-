@@ -1,18 +1,17 @@
-// @flow
-import React, { useContext} from 'react';
+import React, {useContext} from 'react';
 import {Player} from "./Player/Player";
-import {MusicContext} from "./Content/waveData";
 import {Route} from "react-router-dom";
 import DropZone from 'react-drop-zone';
 import 'react-drop-zone/dist/styles.css';
+import {DataContext} from "./Content/Data";
 
 export const Music2 = () => {
-        const [music, setMusic] = useContext(MusicContext);
+        const [data, setData] = useContext(DataContext);
         return (
             <div id={`Music2`}>
                 <h1>Music2</h1>
                 <div className="boxList">
-                    {music.map((music)=>{
+                    {data.Music.map((music)=>{
                         return <Player key={music.id} prefix={`music`} music={music}
                                        path={(music.path)?``:`/Music/`} />
                         }
@@ -27,7 +26,7 @@ export const Music2 = () => {
                                         icon: '',
                                         path: true
                                     };
-                                setMusic([...music, newEl]);
+                                setData({...data, Music: [...data.Music, newEl] });
                             } }>
                                     {
                                             ({ over, overDocument }) =>

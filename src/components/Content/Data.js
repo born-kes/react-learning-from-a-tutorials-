@@ -1,9 +1,9 @@
 import React, {createContext, useState} from "react";
 
-export const NoisliContext = createContext();
+export const DataContext = createContext();
 
-export const NoisliProvider = props => {
-    const [noisli, setNoisli] = useState([
+export const DataProvider = props => {
+    const Noisli = [
         {
             name:'ogien',
             src:'ogien.ogg',
@@ -59,18 +59,8 @@ export const NoisliProvider = props => {
             icon:'wind.svg'
         },
 
-    ]);
-    return (
-        <NoisliContext.Provider value={[noisli, setNoisli]} >
-            {props.children}
-        </NoisliContext.Provider>
-    )
-}
-
-export const MusicContext = createContext();
-
-export const MusicProvider = props => {
-    const [music, setMusic] = useState([
+    ];
+    const Music = [
         {
             name:'ElemTown.mp3',
             src:'ElemTown.mp3',
@@ -89,10 +79,42 @@ export const MusicProvider = props => {
             id:'m3',
             icon:''
         },
-    ]);
+    ];
+    const Maps = [
+        {
+            name:'jaskienia',
+            src:'20_05_2014_3.jpg',
+            id:'m1',
+        },
+        {
+            name:'Las',
+            src:'Noisli/forest.svg',
+            id:'m2',
+        },
+        {
+            name:'wave',
+            src:'Noisli/wave.svg',
+            id:'m3',
+            icon:''
+        },
+        {
+            name:'fire',
+            src:'Noisli/fire.svg',
+            id:'m4',
+        },
+    ];
+
+    const [data, setData] = useState({
+        Noisli: Noisli,
+        Music: Music,
+        Maps: Maps
+    });
+
     return (
-        <MusicContext.Provider value={[music, setMusic]} >
+        <DataContext.Provider value={[data, setData]} >
             {props.children}
-        </MusicContext.Provider>
+        </DataContext.Provider>
     )
 }
+
+

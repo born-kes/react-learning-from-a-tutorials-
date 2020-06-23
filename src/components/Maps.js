@@ -1,10 +1,10 @@
 import React, {useContext} from 'react';
 import AliceCarousel from 'react-alice-carousel';
 import "react-alice-carousel/lib/alice-carousel.css";
-import {MapsContext} from "./Content/mapsData";
+import {DataContext} from "./Content/Data";
 
 export const Maps = () => {
-    const [maps, setMaps] = useContext(MapsContext);
+    const [data, /*setMaps*/] = useContext(DataContext);
 
     const handleOnDragStart = (e) => e.preventDefault()
     return (
@@ -24,7 +24,7 @@ export const Maps = () => {
                        }}
         >
             {
-                maps.map((map)=>(
+                data.Maps.map((map)=>(
                     <div key={map.id}>
              <img src={map.src} onDragStart={handleOnDragStart} className="yours-custom-class" alt={map.name} />
                         <p>{map.name} </p>
