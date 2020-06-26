@@ -57,26 +57,25 @@ export class Player extends Component {
         )
     }
 
+    gC() {
+        return this.ref.audioEl.current;
+    }
+
     togglePlay() {
         if(!this.state.play){
-            this.ref.audioEl.current.play();
+            this.gC().play();
         }else {
-            this.ref.audioEl.current.pause();
+            this.gC().pause();
         }
     }
 
     play () {
-        const timeNow = this.ref.audioEl.current.currentTime;
-        const timeAll = this.ref.audioEl.current.duration;
-        const progress = parseInt( timeNow / timeAll * 100 )
+        this.setState({play: true});
 
-        this.setState({play: true, progress: progress+1});
 
-        this.timerID = setInterval(() => {
-            if(this.state.progress > 100) this.state.progress = 0;
-                this.setState({progress: this.state.progress + (this.state.speed * 1)});
-            },
-            parseInt( timeAll * 10 )
+        this.timerID = setInterval(
+            this.progress.bind(this),
+            500
         );
     }
 
@@ -87,11 +86,18 @@ export class Player extends Component {
 
     ended() {
         if(this.state.repeat) {
-            this.ref.audioEl.current.currentTime = 0;
-            this.ref.audioEl.current.play()
+            this.gC().currentTime = 0;
+            this.gC().play()
         }
         clearInterval(this.timerID);
-        this.setState({progress:0})
+        this.progress();
+    }
+
+    progress() {
+        const timeNow = this.gC().currentTime;
+        const timeAll = this.gC().duration;
+        const progress = parseInt( timeNow / timeAll * 100 )
+        this.setState({progress: progress})
     }
 
     handleClick() {
@@ -122,20 +128,19 @@ export class Player extends Component {
     }
 
     volume( vol ) {
-        console.log('volume',vol)
         this.setState({volume: parseFloat(vol) })
     }
 
     playbackRate( speed ) {
-        this.ref.audioEl.current.playbackRate = speed;
+        this.gC().playbackRate = speed;
         this.setState({ speed: speed});
     }
 
     currentTime(progress ) {
-        const timeAll = this.ref.audioEl.current.duration;
+        const timeAll = this.gC().duration;
 
-        this.ref.audioEl.current.currentTime = timeAll * (progress/100);
+        this.gC().currentTime = timeAll * progress;
 
-        this.setState({ progress: progress});
+        this.progress();
     }
 }

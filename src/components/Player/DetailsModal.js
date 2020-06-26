@@ -38,7 +38,7 @@ export default function DetailsModal({ ok, cancel, date : {play, volume, speed, 
             </div>
             <div>
                 <label>Pasek odtwarzania
-                    <input name="duration" type="range" min="0" max="100" onChange={e=>currentTime(e.target.value)} /></label>
+                    <input name="duration" type="range" min="0" step="0.01" max="1" onChange={e=>currentTime(e.target.value)} /></label>
             </div>
             <div>
                 <label>Szybkość odtwarzania
