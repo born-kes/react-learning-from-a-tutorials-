@@ -92,14 +92,14 @@ export const DataProvider = props => {
             id:'m2',
         },
         {
-            name:'wave',
-            src:'Noisli/wave.svg',
+            name:'Phandalin',
+            src:'https://gfx.gexe.pl/upl/90/2014/6/29124237.jpg',
             id:'m3',
             icon:''
         },
         {
-            name:'fire',
-            src:'Noisli/fire.svg',
+            name:'Mapa Faerunu',
+            src:'https://mepel.pl/userdata/public/gfx/31565/rebel-mapa-dnd-faerun-pl.3120858.800x0.jpg',
             id:'m4',
         },
     ];

@@ -2,11 +2,12 @@ import React, {useContext} from 'react';
 import AliceCarousel from 'react-alice-carousel';
 import "react-alice-carousel/lib/alice-carousel.css";
 import {DataContext} from "./Content/Data";
+import "./maps.css"
+import {Drag} from "./Content/Drag&Drop";
 
 export const Maps = () => {
     const [data, /*setMaps*/] = useContext(DataContext);
 
-    const handleOnDragStart = (e) => e.preventDefault()
     return (
         <div id={`Maps`} style={{width: '210px'}}>
         <AliceCarousel touchTrackingEnabled={true}
@@ -15,9 +16,7 @@ export const Maps = () => {
                        autoPlayDirection = "rtl"
                        autoPlay = { true }
                        fadeOutAnimation = { true }
-                       mouseTrackingEnabled = { true }
-                       // playButtonEnabled ={ true }
-                       // disableAutoPlayOnAction = { true }
+
                        stagePaddin={{
                            paddingLeft : 0 ,
                            paddingRight : 0
@@ -26,12 +25,13 @@ export const Maps = () => {
             {
                 data.Maps.map((map)=>(
                     <div key={map.id}>
-             <img src={map.src} onDragStart={handleOnDragStart} className="yours-custom-class" alt={map.name} />
+                        <Drag class_Name={`maska`} item={map}>
+             <img src={map.src} className="yours-custom-class" alt={map.name} />
                         <p>{map.name} </p>
+                        </Drag>
                     </div>
                 ))
             }
-
         </AliceCarousel>
         </div>
     )

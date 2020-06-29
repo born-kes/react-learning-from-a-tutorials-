@@ -1,6 +1,36 @@
-import React, {Component} from 'react'
+import React, {Component} from 'react';
+import DropZone from "react-drop-zone";
+import {Drop} from "./Content/Drag&Drop";
 
 export class Pulpit extends Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            src:'',
+            history:['']
+        };
+    }
+
+    responseDrop = ({src}) => {
+        if(this.state.history[this.state.history.length -1] !== src)
+        this.setState({
+            src:src,
+            history:[...this.state.history, src]
+        });
+    }
+
+    backDrop = () =>{
+
+        const history = [...this.state.history]
+
+        history.splice(history.length-1, 1)
+        this.setState({
+            src: history[history.length -1] ,
+            history: history
+
+        } );
+    }
 
     render() {
         const container3d = {
@@ -19,14 +49,26 @@ export class Pulpit extends Component {
             textAlign: 'center',
         };
         const contenderElement ={
+            maxWidth: '120vh',
+            maxHeight: '100vh',
+            width: '100%',
             height: '100%'
         }
 
         return (
-            <div id="Pulpit" style={container3d}>
-                <div style={box3d}>
-                    <img src="20_05_2014_3.jpg" alt={``} style={contenderElement} />
-                </div>
+            <div id="Pulpit">
+                <Drop style={container3d} responseDrop={this.responseDrop} backDrop={this.backDrop}>
+                    <DropZone
+                    onDrop={(file) =>this.response({src: URL.createObjectURL(file) }) }
+                    handleClick={ false }
+                    >
+                        { () => (
+                            <div style={box3d} className='DropZone'>
+                                <img src={this.state.src} alt={``} style={contenderElement}/>
+                            </div>
+                            )}
+                    </DropZone>
+                </Drop>
             </div>
         )
     }
