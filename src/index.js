@@ -31,12 +31,12 @@ ReactDOM.render( <div>
                 <Route path="/Notes" component={Notes} />
                 <Route path="/" exact >
                     <div className={`container`}>
+                        <Pulpit />
                         <TimeBox />
                         <Music2 />
                         <Music1 />
                         <Maps />
                         <Chat />
-                        <Pulpit />
                         <Notes />
                     </div>
                 </Route>

@@ -59,7 +59,7 @@ export class Pulpit extends Component {
             <div id="Pulpit">
                 <Drop style={container3d} responseDrop={this.responseDrop} backDrop={this.backDrop}>
                     <DropZone
-                    onDrop={(file) =>this.response({src: URL.createObjectURL(file) }) }
+                    onDrop={(file) =>this.responseDrop({src: URL.createObjectURL(file) }) }
                     handleClick={ false }
                     >
                         { () => (

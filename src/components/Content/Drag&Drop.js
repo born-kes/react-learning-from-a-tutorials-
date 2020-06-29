@@ -27,15 +27,14 @@ export const Drop = ({children, style, className, responseDrop=()=>{}, backDrop 
 
     const drop = event => {
         event.preventDefault();
+        if(event.dataTransfer.getData('items'))
+            return responseDrop( JSON.parse(event.dataTransfer.getData('items') ) );
 
         let src = event.dataTransfer.getData('application/x-moz-file-promise-url');
         if(!src)
             src = event.dataTransfer.getData('text/plain');
         if(src)
             return responseDrop({src:src})
-
-        if(!src && event.dataTransfer.getData('items'))
-            responseDrop( JSON.parse(event.dataTransfer.getData('items') ) );
 
     }
 
