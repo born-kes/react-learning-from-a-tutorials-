@@ -28,6 +28,9 @@ export class Player extends Component {
 
         this.timerID = 0;
 
+        if(this.props.load) {
+            this.props.load( () => this.gC() );
+        }
     }
     render() {
         return (
