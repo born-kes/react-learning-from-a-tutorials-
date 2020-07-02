@@ -7,41 +7,28 @@ export class Pulpit extends Component {
         super(props);
 
         this.state = {
-            prevent: false,
             src:'',
             history:['']
         };
     }
     allowedExtensions = (src) => {
         const allowedExtensions =
-            /(\.jpg|\.jpeg|\.png|\.gif)(|\?.*)$/i;
+            /(\.jpg|\.jpeg|\.png|\.gif|\.svg)(|\?.*)$/i;
         const prevent = (allowedExtensions.exec(src)?false:true);
-        this.setState({prevent: prevent });
         return prevent;
     }
 
     responseDrop = ({src}, test=true) => {
-        if(test && this.allowedExtensions(src) ) return;
+        if(test && this.allowedExtensions(src) ) {
+            console.error('File problem not accepted', src)
+            return;
+        }
 
-            if(this.state.history[this.state.history.length -1] !== src)
         this.setState({
-            src:src,
-            history:[...this.state.history, src]
+            src:src
         });
     }
 
-    backDrop = () =>{
-        if(this.state.prevent) return;
-
-        const history = [...this.state.history]
-
-        history.splice(history.length-1, 1)
-        this.setState({
-            src: history[history.length -1] ,
-            history: history
-
-        } );
-    }
 
     render() {
         const container3d = {
@@ -68,7 +55,10 @@ export class Pulpit extends Component {
 
         return (
             <div id="Pulpit">
-                <Drop style={container3d} responseDrop={this.responseDrop} backDrop={this.backDrop}>
+                <Drop
+                    style={container3d}
+                    responseDrop={this.responseDrop}
+                >
                     <DropZone
                     onDrop={(file) =>{file.src = URL.createObjectURL(file); this.responseDrop(file, false) }}
                     handleClick={ false }
