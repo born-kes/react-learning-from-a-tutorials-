@@ -1,0 +1,38 @@
+#TimeBox {
+    position: relative;
+    padding: 10px;
+}
+.ruler {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.ruler div {
+    height: 50px;
+    border-left: 2px solid black;
+    padding-left: 5px;
+}
+#TimeBox .TimeBox-el {
+    position: relative;
+    width: -moz-calc(100% - 35px);
+    width: -webkit-calc(100% - 35px);
+    width: -o-calc(100% - 35px);
+    width: calc(100% - 35px);
+    height: 10px;
+}
+#TimeBox .x {
+    position: absolute;
+    width: 100%;
+    left: 0px;
+    transition: transform 0ms ease 1s, opacity ease 8s;
+    transform: translate3d(100%, -30px, 0px);
+    opacity: 0;
+}
+#TimeBox .x.opacity{
+    opacity:0.06;
+    transform: translate3d(100%, 10px, 0px);
+}
+
+#TimeBox .x div:first-child {
+    width: 40px;
+}
