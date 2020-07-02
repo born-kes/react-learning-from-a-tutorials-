@@ -7,7 +7,14 @@ export class Player extends Component {
 
     constructor(props) {
         super(props);
+        const {music:{id, name, src, icon, path=''}, prefix=''} = props;
+
+        this.key = `${prefix}-${id}`;
         this.state = {
+            srcIcon: (icon ? path + icon : ''),
+            srcMusic: path + src,
+            name: name,
+
             play: false,
             progress: 1,
             repeat: false,
@@ -23,16 +30,14 @@ export class Player extends Component {
 
     }
     render() {
-        const prefix = this.props.prefix;
-        const music = this.props.music;
-        const path = this.props.path;
-        const id = `${prefix}-${music.id}`;
         return (
-            <div key={id} style={{position:"relative"}}>
+            <div
+                key={this.key}
+                style={{position:"relative"}}>
                 <ReactPlayer
-                    id={id}
-                    src={`${path}${music.src}`}
-                    title={music.name}
+                    id={this.key}
+                    src={this.state.srcMusic}
+                    title={this.state.name}
                     volume = {this.state.volume}
                     loop={this.state.repeat}
                     onEnded={()=>{this.ended()}}
@@ -47,10 +52,14 @@ export class Player extends Component {
                     onDoubleClick={()=>this.changeConfig() }
                 >
                     <PlayerProgressComponent progress={this.state.progress} />
-                    { (music.icon)? (
-                        <img src={`${path}${music.icon}`} alt={music.name} title={music.name} />
+                    { (this.state.srcIcon)? (
+                        <img
+                            src={this.state.srcIcon}
+                            alt={this.state.name}
+                            title={this.state.name}
+                        />
                         ):(
-                        <div>{music.name}</div>
+                        <div>{this.state.name}</div>
                     )}
                 </div>
             </div>
