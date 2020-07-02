@@ -4,6 +4,7 @@ import {Route} from "react-router-dom";
 import DropZone from 'react-drop-zone';
 import 'react-drop-zone/dist/styles.css';
 import {DataContext} from "./Content/Data";
+import {Drag} from "./Content/Drag&Drop";
 
 export const Music2 = () => {
         const [data, setData] = useContext(DataContext);
@@ -12,8 +13,18 @@ export const Music2 = () => {
                 <h1>Music2</h1>
                 <div className="boxList">
                     {data.Music.map((music)=>{
-                        return <Player key={music.id} prefix={`music`} music={music}
-                                       path={(music.path)?``:`/Music/`} />
+                        music.path=`/Music/`;
+                        return (
+                            <Drag
+                                key={music.id}
+                                item={music}
+                            >
+                                <Player
+                                    prefix={`music`}
+                                    music={music}
+                                />
+                            </Drag>
+                        )
                         }
                     )}
                 </div>

@@ -96,8 +96,7 @@ container1{
     text-align: center;
 }
 
-.box div[draggable=true] img,
-.boxList div[draggable=true] {
+.box div[draggable=true] img{
     background-color: red;
     margin: 4px;
 
