@@ -30,7 +30,7 @@ export class TimeBox extends Component {
 
             let timeID = setInterval(()=>{
                 const newDate = [...this.state.date];
-                newDate[nr].timeToRun = 100 - Math.floor(100 / (300 / odliczanie) );
+                newDate[nr].timeToRun = 100 - Math.floor(100 / (300 / odliczanie--) );
                 newDate[nr].opacity = '';
 
                 if(odliczanie<0) {
