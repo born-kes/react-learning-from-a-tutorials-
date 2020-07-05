@@ -18,10 +18,12 @@ export const Drag = ({children, item, class_Name = null}) => {
 
 }
 
-export const Drop = ({children, style, className, responseDrop=()=>{} }) => {
+export const Drop = ({children, style, className, responseDrop=()=>{}, responseDragOver }) => {
 
     const dragOver = event => {
         event.preventDefault();
+        if(responseDragOver)
+            responseDragOver(event);
     }
 
     const drop = event => {

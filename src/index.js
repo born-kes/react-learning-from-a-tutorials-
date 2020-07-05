@@ -5,7 +5,7 @@ import {
     Switch,
     Route
 } from "react-router-dom";
-import {TimeBox} from "./components/TimeBox";
+import {TimeRulerBox} from "./components/TimeRulerBox";
 import {Music1} from "./components/Music1";
 import {Music2} from "./components/Music2";
 import {Maps} from "./components/Maps";
@@ -23,7 +23,7 @@ ReactDOM.render( <div>
         <div>
             <DataProvider>
             <Switch>
-                <Route path="/TimeBox" component={TimeBox} />
+                <Route path="/TimeBox" component={TimeRulerBox} />
                 <Route path="/Music1" component={()=>(<Music1 />)} />
                 <Route path="/Music2" component={()=>(<Music2 />)} />
                 <Route path="/Maps" component={()=>(<Maps />)} />
@@ -32,7 +32,7 @@ ReactDOM.render( <div>
                 <Route path="/" exact >
                     <div className={`container`}>
                         <Pulpit />
-                        <TimeBox />
+                        <TimeRulerBox />
                         <Music2 />
                         <Music1 />
                         <Maps />
