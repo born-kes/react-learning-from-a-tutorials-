@@ -14,3 +14,18 @@ div[draggable=true]{
 .alice-carousel__stage-item div.active[draggable=true]{
     opacity: 0;
 }
+.alice-carousel__prev-btn, .alice-carousel__next-btn{
+    position: absolute;
+    width: 20%;
+    padding: 10px 10px;
+    top:0;
+}
+alice-carousel__prev-btn{
+    left:0px;
+}
+.alice-carousel__next-btn{
+    right: 0px;
+}
+.alice-carousel__dots{
+    display: none;
+}

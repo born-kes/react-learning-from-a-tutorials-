@@ -13,7 +13,6 @@ export const Maps = () => {
         <AliceCarousel touchTrackingEnabled={true}
                        controlsStrategy='responsive'
                        autoPlayInterval = { 2000 }
-                       autoPlayDirection = "rtl"
                        autoPlay = { true }
                        fadeOutAnimation = { true }
 
