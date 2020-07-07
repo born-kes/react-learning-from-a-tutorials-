@@ -25,7 +25,7 @@ div {
     display: grid;
     justify-items: stretch;
     grid-template-columns: auto 70vh auto;
-    grid-template-rows: auto auto auto auto;
+    grid-template-rows: 10vh 40vh auto auto;
     grid-template-areas:
     "Chat TimeBox Music1"
     "Chat Pulpit Music1"
