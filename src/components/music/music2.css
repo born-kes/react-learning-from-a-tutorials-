@@ -1,10 +1,13 @@
+#Music1 h1 div,
 #Music2 h1 div {
     float: right;
     font-size: x-large;
 }
+#Music1 h1,
 #Music2 h1{
     position: relative;
 }
+#Music1 h1 .DropZone,
 #Music2 h1 .DropZone{
     position: absolute;
     top:0px;
