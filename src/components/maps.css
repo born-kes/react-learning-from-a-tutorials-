@@ -1,3 +1,19 @@
+#Maps h1{
+    position: relative;
+}
+#Maps h1 div {
+    float: right;
+    font-size: x-large;
+}
+#Maps h1 .DropZone{
+    position: absolute;
+    top:0px;
+    left: 0%;
+    right: 0px;
+    z-index: 5;
+    background-color: white;
+}
+
 .maska {
     position: absolute;
     width: 100%;
