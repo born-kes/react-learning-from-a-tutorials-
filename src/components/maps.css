@@ -24,9 +24,11 @@
 div[draggable=true]{
     text-align: center;
     opacity: 1;
-    border-radius:  10px;
-    background-color: lightslategray;
 }
+.alice-carousel{
+    padding-top:10px ;
+}
+
 .alice-carousel__stage-item div.active[draggable=true]{
     opacity: 0;
 }
@@ -44,4 +46,17 @@ alice-carousel__prev-btn{
 }
 .alice-carousel__dots{
     display: none;
+}
+.alice-carousel__stage-item p.button{
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    padding: 15px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin: 4px 2px;
+    cursor: pointer;
 }

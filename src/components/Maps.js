@@ -19,27 +19,26 @@ export const Maps = () => {
                 </div>
             )
         });
+    items.push(<div key={-1}>
+        <DropZone accept=".jpg, .jpeg, .png, .gif, .svg" onDrop={(file) =>{
+        const newEl = {
+            name: file.name,
+            src: URL.createObjectURL(file),
+            id: `drop${Math.random()}`
+        };
+        setData({...data, Maps: [...data.Maps, newEl] });
+    } }>
+        {({over}) =>over?<div className='DropZone'>Upuść tutaj</div>:<p className='button'>Dodaj<br /> Nowy</p>}
+    </DropZone>
+    </div>)
 
     return (
         <div id={`Maps`} style={{width: '210px'}}>
-            <h1>Maps
-                <DropZone accept=".jpg, .jpeg, .png, .gif, .svg" onDrop={(file) =>{
-                    const newEl = {
-                        name: file.name,
-                        src: URL.createObjectURL(file),
-                        id: `drop${Math.random()}`
-                    };
-                    console.log(newEl)
-                    setData({...data, Maps: [...data.Maps, newEl] });
-                } }>
-                    {({over}) =>over?<div className='DropZone'>Upuść tutaj</div>:<div>+</div>}
-                </DropZone>
-            </h1>
         <AliceCarousel touchTrackingEnabled={true}
                        items={items}
                        controlsStrategy='responsive'
                        autoPlayInterval = { 2000 }
-                       autoPlay = { true }
+                       // autoPlay = { true }
                        fadeOutAnimation = { true }
 
                        stagePaddin={{
