@@ -56,10 +56,6 @@ export class TimeRulerBox extends Component {
                             )
                         )}
                     </div>
-                    <div>
-                        <div onClick={this.playAll}>Play</div>
-                        <div onClick={this.pauseAll}>Pause</div>
-                    </div>
                 </Drop>
             </div>
         )
@@ -103,18 +99,6 @@ export class TimeRulerBox extends Component {
         newDate.splice(index, 1);
 
         this.setState({date: [...newDate]});
-    }
-
-    playAll = () => {
-        this.state.date.forEach(el => {
-            el.ref().play();
-        });
-    }
-
-    pauseAll = () =>{
-        this.state.date.forEach(el=>{
-           el.ref().pause();
-        });
     }
 
 }
