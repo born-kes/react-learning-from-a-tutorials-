@@ -11,38 +11,29 @@ import {Music2} from "./components/Music2";
 import {Maps} from "./components/Maps";
 import {Chat} from "./components/Chat";
 import {Notes} from "./components/Notes";
-import {Nav} from "./components/Nav";
 import './index.css';
 import {Pulpit} from "./components/Pulpit";
 import {DataProvider} from "./components/Content/Data";
+import SliderBox from "./components/Slider/SliderBox";
 // import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render( <div>
     <Router>
-        <Nav />
-        <div>
             <DataProvider>
             <Switch>
-                <Route path="/TimeBox" component={TimeRulerBox} />
-                <Route path="/Music1" component={()=>(<Music1 />)} />
-                <Route path="/Music2" component={()=>(<Music2 />)} />
-                <Route path="/Maps" component={()=>(<Maps />)} />
-                <Route path="/Chat" component={Chat} />
-                <Route path="/Notes" component={Notes} />
-                <Route path="/" exact >
+                <Route path="/" >
                     <div className={`container`}>
-                        <Pulpit />
                         <TimeRulerBox />
-                        <Music2 />
-                        <Music1 />
-                        <Maps />
-                        <Chat />
-                        <Notes />
+                        <Pulpit />
+                        <SliderBox type='left' name='Maps'><Maps /></SliderBox>
+                        <SliderBox type='left' name='Notes'><Notes /></SliderBox>
+                        <SliderBox type='right' name='Dzwięki'><Music1 /></SliderBox>
+                        <SliderBox type='right' name='Muzyka'><Music2 /></SliderBox>
+                        <SliderBox type='right' name='Chat'><Chat /></SliderBox>
                     </div>
                 </Route>
             </Switch>
             </DataProvider>
-        </div>
     </Router>
 </div> , document.getElementById('root') );
 
