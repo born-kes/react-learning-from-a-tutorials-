@@ -58,7 +58,7 @@ export class Chat extends Component {
                 </div>
                 <div>
                     <form  onSubmit={this._sendMessage.bind(this)}>
-                        <input/>
+                        <input placeholder='Możesz tu pisać...'/>
                     </form>
                 </div>
             </div>
