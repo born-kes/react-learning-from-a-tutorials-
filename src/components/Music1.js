@@ -12,7 +12,6 @@ export const Music1 = () => {
 
     return (
         <div id={`Music1`}>
-            <h1>Music1
                 <DropZone accept=".mp3, .ogg" onDrop={(file) =>{
                     const newEl =         {
                         name: file.name,
@@ -22,9 +21,11 @@ export const Music1 = () => {
                     };
                     setData({...data, Noisli: [...data.Noisli, newEl] });
                 } }>
-                    {({over}) =>over?<div className='DropZone'>Upuść tutaj</div>:<div>+</div>}
+                {({over}) =>over?
+                    <div className='DropZone'>Upuść tutaj</div>:
+                    <div className='button' >Dodaj nowy dzwięk</div>
+                }
                 </DropZone>
-            </h1>
             <div className='box'>
                 { data.Noisli.map((music)=>{
                     if(music.path !== '')

@@ -16,6 +16,7 @@
     overflow: hidden;
 }
 
+#Music1 .button,
 #Music2 .button {
     background-color: #4CAF50;
     border: none;
