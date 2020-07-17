@@ -69,7 +69,7 @@ export class TimeBoxElement extends Component {
     }
 
     finishTime = () => {
-        this.setState({opacity:0})
+        this.setState({opacity:0, timeToEnd:false})
         this.props.finish(this.props.el)
     }
 }
