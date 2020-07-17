@@ -1,4 +1,5 @@
-import React, {Component} from 'react'
+import React, {Component} from 'react';
+import './playProgress.css';
 
 export class PlayerProgressComponent extends Component {
     render() {

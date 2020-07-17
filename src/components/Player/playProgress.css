@@ -1,0 +1,14 @@
+.audio-play-progress{
+    width: 50%;
+    position: absolute;
+    left: 1px;
+    bottom: 1px;
+    content: "";
+    display: block;
+    height: 2px;
+    z-index: 1;
+    /*background-image: url("");*/
+    background-color: green;
+    /*background-repeat: no-repeat;*/
+    /*background-size: 50% 100%;*/
+}

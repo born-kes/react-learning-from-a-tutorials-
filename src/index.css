@@ -1,65 +1,17 @@
 * {
     box-sizing: border-box;
 }
-div {
-    /*margin: 10px;*/
-    /*padding: 10px;*/
-}
 #root{
     height: 100vh;
 }
-#Nav{
-    height: 10vh;
 
-}
-#Nav ul{
-    list-style-type: none;
-}
-#Nav li {
-    display: inline;
-    padding: 5px;
-}
 
-.container {
-    /*height: 90%;*/
-    display: grid;
-    justify-items: stretch;
-    grid-template-columns: auto 70vh auto;
-    grid-template-rows: 10vh 40vh auto auto;
-    grid-template-areas:
-    "Chat TimeBox Music1"
-    "Chat Pulpit Music1"
-    "Notes Pulpit Music2"
-	"Maps Pulpit .";
-    width: 100%;
-    justify-items: stretch;
-    align-items: stretch;
-}
 .container div {
     z-index: 2;
 
 }
 #TimeBox{
-    grid-area: TimeBox;
     background-color: blue;
-}
-#Music1{
-    grid-area: Music1;
-}
-#Music2{
-    grid-area: Music2;
-}
-#Chat {
-    grid-area: Chat;
-}
-#Maps  {
-    grid-area: Maps;
-}
-#Notes {
-    grid-area: Notes;
-}
-#Pulpit{
-    grid-area: Pulpit;
 }
 img{
     height: 70px;
@@ -106,18 +58,4 @@ container1{
     -webkit-user-drag: none;
     -ms-user-select: none;
 
-}
-.audio-play-progress{
-    width: 50%;
-    position: absolute;
-    left: 1px;
-    bottom: 1px;
-    content: "";
-    display: block;
-    height: 2px;
-    z-index: 1;
-    /*background-image: url("");*/
-    background-color: green;
-    /*background-repeat: no-repeat;*/
-    /*background-size: 50% 100%;*/
 }
