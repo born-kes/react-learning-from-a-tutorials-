@@ -11,10 +11,8 @@ export const Music2 = () => {
         const [data, setData] = useContext(DataContext);
         return (
             <div id={`Music2`}>
-                <h1>Music2
+
                     <DropZone accept=".mp3, .ogg" onDrop={(file) =>{
-                        console.log(file)
-                        console.log(URL.createObjectURL(file))
                         const newEl =         {
                             name: file.name,
                             src: URL.createObjectURL(file),
@@ -23,9 +21,12 @@ export const Music2 = () => {
                         };
                         setData({...data, Music: [...data.Music, newEl] });
                     } }>
-                        {({over}) =>over?<div className='DropZone'>Upuść tutaj</div>:<div>+</div>}
+                        {({over}) =>over?
+                            <div className='DropZone'>Upuść tutaj</div>:
+                            <div className='button'>Dodaj nowy element</div>
+                        }
                     </DropZone>
-                </h1>
+
                 <div className="boxList">
                     {data.Music.map((music)=>{
                         if( music.path!=='')

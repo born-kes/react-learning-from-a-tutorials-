@@ -1,12 +1,3 @@
-#Music1 h1 div,
-#Music2 h1 div {
-    float: right;
-    font-size: x-large;
-}
-#Music1 h1,
-#Music2 h1{
-    position: relative;
-}
 #Music1 h1 .DropZone,
 #Music2 h1 .DropZone{
     position: absolute;
@@ -15,4 +6,27 @@
     right: 0px;
     z-index: 5;
     background-color: white;
+}
+
+.TimeBox-el .svg div{
+    margin: 3px;
+    /*word-wrap: anywhere;*/
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+#Music2 .button {
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    padding: 15px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    width: 98%;
 }
