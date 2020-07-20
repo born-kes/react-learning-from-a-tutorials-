@@ -1,13 +1,15 @@
 #Chat {
-    height: 400px;
+    height: 350px;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 #Chat h1{
+    display: flex;
+    justify-content: space-between;
     padding: 0px;
     margin: 0px;
 }
 #Chat .sc-message-list {
-    height: 80%;
+    height: 70%;
     overflow-y: auto;
     background-color: white;
     background-size: 100%;
@@ -31,10 +33,10 @@
 }
 
 .sc-message--avatar {
-    background-image: url(https://d13yacurqjgara.cloudfront.net/assets/avatar-default-aa2eab7684294781f93bc99ad394a0eb3249c5768c21390163c9f55ea8ef83a4.gif);
+    background-image: url(/160.jpg);
     background-repeat: no-repeat;
-    background-size: 100%;
-    background-position: center;
+    background-size: 230px;
+    background-position: -11px -32px;
     min-width: 40px;
     max-width: 40px;
     min-height: 40px;
@@ -46,6 +48,25 @@
     outline: none;
     overflow: hidden;
 }
+.sc-message--avatar.ico1{ background-position: -11px  -32px;}
+.sc-message--avatar.ico2{ background-position: -11px  -81px;}
+.sc-message--avatar.ico3{ background-position: -11px  -130px;}
+.sc-message--avatar.ico4{ background-position: -11px  -179px;}
+	
+.sc-message--avatar.ico5{ background-position: -67px  -32px;}
+.sc-message--avatar.ico6{ background-position: -67px  -81px;}
+.sc-message--avatar.ico7{ background-position: -67px  -130px;}
+.sc-message--avatar.ico8{ background-position: -67px  -179px;}
+	
+.sc-message--avatar.ico9{ background-position: -123px  -32px;}
+.sc-message--avatar.ico10{ background-position: -123px  -81px;}
+.sc-message--avatar.ico11{ background-position: -123px  -130px;}
+.sc-message--avatar.ico12{ background-position: -123px  -179px;}
+	
+.sc-message--avatar.ico13{ background-position: -179px  -32px;}
+.sc-message--avatar.ico14{ background-position: -179px  -81px;}
+.sc-message--avatar.ico15{ background-position: -179px  -130px;}
+.sc-message--avatar.ico16{ background-position: -179px  -179px;}
 
 
 .sc-message--date {
