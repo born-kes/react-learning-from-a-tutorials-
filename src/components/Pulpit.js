@@ -48,7 +48,7 @@ export class Pulpit extends Component {
                     >
                         { () => (
                             <div className='DropZone box3d'>
-                                <img src={this.state.src} alt='upuść obrazek tutaj' className='contenderElement' />
+                                <img src={this.state.src} alt='upuść Mape/ Obrazek tutaj...' className='contenderElement' />
                             </div>
                             )}
                     </DropZone>

@@ -24,6 +24,8 @@ body{
     -webkit-transform-style: preserve-3d;
     text-align: center;
     padding: 0.3em;
+    min-height: 30vh;
+    line-height: 10vh;
 }
 .contenderElement{
     max-width: 90vw;

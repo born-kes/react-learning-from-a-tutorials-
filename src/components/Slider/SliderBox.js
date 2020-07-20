@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import './SliderBox.css';
 
 
-const SliderBox = ({children, type, name}) => {
+const SliderBox = ({children, type='', name}) => {
     const [active, setActive] = useState(false);
     const toggleActive = (e)=>{
         console.log('active')
@@ -10,7 +10,7 @@ const SliderBox = ({children, type, name}) => {
     }
 
         return (
-            <div className={`panel ${type}${active?` active`:``}`}>
+            <div className={`panel ${type} ${active?` active`:``}`}>
                 <div className='panel-overlap' onClick={toggleActive}>{name}</div>
                 {children}
             </div>

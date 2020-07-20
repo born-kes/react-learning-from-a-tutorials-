@@ -1,6 +1,4 @@
-div>.panel{
-    top:50%;
-}
+.container > .panel.left:not(:last-child)~ .left,
 .container > .panel.right:not(:last-child){
     top:31vh;
 }
@@ -15,10 +13,11 @@ div>.panel.right:last-child{
 
 div>.panel{
     background-color: #fff;
-    position: relative;
+    position: fixed;
     border-top: 3px solid #001ac3;
     border-left: 3px solid #001ac3;
     border-right: 3px solid #001ac3;
+    border-bottom: 1px solid #001ac370;
     border-radius: 10px;
     z-index: 5;
     max-height: 400px;
@@ -52,9 +51,8 @@ div>.panel{
     z-index: 22;
 }
 .panel.right {
+    width: 400px;
     right: -400px;
-    width: 100%;
-    position: fixed;
     transition: right 0.5s ease-out 0s;
 }
 .panel.right.active{
@@ -76,7 +74,8 @@ div>.panel{
 }
 
 .panel.left{
-    left: -403px;
+    width: 400px;
+    left: -400px;
     transition: left 0.5s ease-out 0s;
 }
 .panel.left.active {
