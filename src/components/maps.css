@@ -1,0 +1,62 @@
+#Maps h1{
+    position: relative;
+}
+#Maps h1 div {
+    float: right;
+    font-size: x-large;
+}
+#Maps h1 .DropZone{
+    position: absolute;
+    top:0px;
+    left: 0%;
+    right: 0px;
+    z-index: 5;
+    background-color: white;
+}
+
+.maska {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    /*background: red;*/
+}
+div[draggable=true]{
+    text-align: center;
+    opacity: 1;
+}
+.alice-carousel{
+    padding-top:10px ;
+}
+
+.alice-carousel__stage-item div.active[draggable=true]{
+    opacity: 0;
+}
+.alice-carousel__prev-btn, .alice-carousel__next-btn{
+    position: absolute;
+    width: 20%;
+    padding: 10px 10px;
+    top:0;
+}
+alice-carousel__prev-btn{
+    left:0px;
+}
+.alice-carousel__next-btn{
+    right: 0px;
+}
+.alice-carousel__dots{
+    display: none;
+}
+.alice-carousel__stage-item p.button{
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    padding: 15px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin: 4px 2px;
+    cursor: pointer;
+}

@@ -8,9 +8,15 @@
   ],
   "dependencies": {
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-async-popup": "0.0.6",
+    "react-audio-player": "^0.13.0",
+    "react-alice-carousel": "^1.19.3",
+    "react-drop-zone": "^3.2.0",
+    "react-dom": "^16.13.1",
+    "react-router-dom": "^5.2.0"
   },
   "devDependencies": {
+    "fsevents": "^1.2.13",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
@@ -24,7 +30,6 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-
   "browserslist": {
     "production": [
       ">0.2%",
@@ -36,5 +41,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "optionalDependencies": {
+    "fsevents": "^2.1.3"
   }
 }
