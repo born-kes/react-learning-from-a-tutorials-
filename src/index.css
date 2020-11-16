@@ -49,9 +49,7 @@ container1{
 }
 
 .box div[draggable=true] img{
-    background-color: red;
     margin: 4px;
-
     user-drag:none;
     user-select: none;
     -moz-user-select: none;

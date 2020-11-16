@@ -301,6 +301,7 @@ export const DataProvider = props => {
     ]
 
     const [data, setData] = useState({
+        Notes: [],
         Chat: Chat,
         Noisli: Noisli,
         Music: Music,

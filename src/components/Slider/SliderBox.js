@@ -1,21 +1,28 @@
-import React, {useState} from 'react';
+import React, {Component} from 'react';
 import './SliderBox.css';
 
 
-const SliderBox = ({children, type='', name}) => {
-    const [active, setActive] = useState(false);
-    const toggleActive = (e)=>{
-        console.log('active')
-        setActive(!active);
+class SliderBox extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            active: false
+        };
     }
 
+    toggleActive = (e)=> {
+        this.setState({
+            active: !this.state.active
+        });
+    }
+    render() {
         return (
-            <div className={`panel ${type} ${active?` active`:``}`}>
-                <div className='panel-overlap' onClick={toggleActive}>{name}</div>
-                {children}
+            <div className={`panel ${this.props.type} ${(this.state.active)?` active`:``}`}>
+                <div className='panel-overlap' onClick={this.toggleActive}>{this.props.name}</div>
+                {this.props.children}
             </div>
         )
-
+    }
 }
 
 export default SliderBox;

@@ -132,7 +132,8 @@ export class Player extends Component {
                 loop: this.loop.bind(this),
                 currentTime: this.currentTime.bind(this)
             });
-        const popupResponse = await popup();
+        // const popupResponse =
+            await popup();
     }
 
     loop( repeat ) {

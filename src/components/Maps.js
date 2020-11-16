@@ -32,6 +32,7 @@ export const Maps = () => {
     </DropZone>
     </div>)
 
+    console.log('m')
     return (
         <div id={`Maps`} style={{width: '210px'}}>
         <AliceCarousel touchTrackingEnabled={true}

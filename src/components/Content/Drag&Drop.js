@@ -5,11 +5,18 @@ export const Drag = ({children, item, class_Name = null}) => {
     const dragStarted = (event) => {
         event.dataTransfer.setData("items", JSON.stringify(item));
     }
+    const onTouchStart =(ev) => {
+        // console.log(ev.target)
+        // document.getElementById('Notes').innerText = JSON.stringify(ev);
+    }
 
     return (
         <div
             draggable="true"
             onDragStart={dragStarted}
+            onTouchStart={onTouchStart}
+            onTouchMove={onTouchStart}
+            onTouchEnd={onTouchStart}
         >
             <div className={class_Name}></div>
             {children}
@@ -38,13 +45,20 @@ export const Drop = ({children, style, className, responseDrop=()=>{}, responseD
             return responseDrop({src:src})
 
     }
-
+    const onTouchStart =(ev) => {
+        console.log(ev)
+        // document.getElementById('Notes').innerText = JSON.stringify(ev);
+    }
     return (
         <div
             style={style}
             className={className}
             onDragOver={dragOver}
             onDrop={drop}
+            onTouchMove={onTouchStart}
+            onTouchEnd={onTouchStart}
+            onMouseUp={onTouchStart}
+            onDragEnter={onTouchStart}
         >
             {children}
         </div>

@@ -8,11 +8,12 @@
   ],
   "dependencies": {
     "react": "^16.13.1",
+    "react-alice-carousel": "^1.19.3",
     "react-async-popup": "0.0.6",
     "react-audio-player": "^0.13.0",
-    "react-alice-carousel": "^1.19.3",
-    "react-drop-zone": "^3.2.0",
     "react-dom": "^16.13.1",
+    "react-drag-drop-container": "^6.1.1",
+    "react-drop-zone": "^3.2.0",
     "react-router-dom": "^5.2.0"
   },
   "devDependencies": {

@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import {Player} from "../Player/Player";
-import "./timeBox.css";
+// import "./timeBox.css";
 
 export class TimeBoxElement extends Component {
     constructor(props) {

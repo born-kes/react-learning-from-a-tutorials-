@@ -23,13 +23,16 @@ ReactDOM.render( <div>
             <Switch>
                 <Route path="/" >
                     <div className={`container`}>
+                        {/*<React.StrictMode>*/}
                         <TimeRulerBox />
                         <Pulpit />
                         <SliderBox type='left' name='Maps'><Maps /></SliderBox>
                         <SliderBox type='left' name='Notes'><Notes /></SliderBox>
                         <SliderBox type='right' name='Dzwięki'><Music1 /></SliderBox>
                         <SliderBox type='right' name='Muzyka'><Music2 /></SliderBox>
+
                         <SliderBox type='right' name='Chat'><Chat /></SliderBox>
+                        {/*</React.StrictMode>*/}
                     </div>
                 </Route>
             </Switch>

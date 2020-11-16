@@ -1,6 +1,6 @@
 #TimeBox {
     position: relative;
-    padding: 10px;
+    padding: 0;
 }
 .ruler {
     display: flex;
@@ -10,7 +10,8 @@
 .ruler div {
     height: 50px;
     border-left: 2px solid black;
-    padding-left: 5px;
+    padding: 5px;
+    width: 100%;
 }
 #TimeBox .TimeBox-el {
     position: relative;
@@ -18,7 +19,7 @@
     width: -webkit-calc(100% - 35px);
     width: -o-calc(100% - 35px);
     width: calc(100% - 35px);
-    height: 10px;
+    /*height: 10px;*/
 }
 #TimeBox .x {
     position: absolute;

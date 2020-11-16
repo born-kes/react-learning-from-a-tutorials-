@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import { Player } from "./Player/Player";
 import {DataContext} from "./Content/Data";
 import {Drag} from "./Content/Drag&Drop";
+import { DragDropContainer } from 'react-drag-drop-container';
 import DropZone from "react-drop-zone";
 import "./music/music2.css";
 
@@ -31,15 +32,15 @@ export const Music1 = () => {
                     if(music.path !== '')
                     music.path = '/Noisli/';
                         return (
-                            <Drag
+                            <DragDropContainer
                                 key={music.id}
-                                item={music}
+                                dragData={music}
                             >
                                 <Player
                                     prefix={`noisli`}
                                     music={music}
                                 />
-                            </Drag>
+                            </DragDropContainer>
                             )
                     }
                 )}

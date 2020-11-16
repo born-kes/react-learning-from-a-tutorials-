@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import {Drop} from "./Content/Drag&Drop";
+import { DragDropContainer, DropTarget } from 'react-drag-drop-container';
 import "./timeBox/timeBox.css";
 import {TimeBoxElement} from "./timeBox/TimeBoxElement";
 
@@ -24,7 +25,6 @@ export class TimeRulerBox extends Component {
             let time = steps * step;
             string.push(
                 <div key={steps}
-                     onDragOver={this.dragOver}
                 >
                     { this.singleScale( time )  }
                 </div>
@@ -37,8 +37,8 @@ export class TimeRulerBox extends Component {
     render() {
         return (
             <div id={`TimeBox`} >
-                <Drop
-                    responseDrop={this.responseDrop}
+                <DropTarget
+                    onHit={this.responseDrop}
                 >
                     <div className={'ruler'}>{ this.timeRulerBoxes() }</div>
                     
@@ -56,12 +56,14 @@ export class TimeRulerBox extends Component {
                             )
                         )}
                     </div>
-                </Drop>
+                </DropTarget>
             </div>
         )
     }
 
-    responseDrop = item => {
+    responseDrop = event => {
+        this.dragOver(event)
+        const item = event.dragData;
         item.key = Math.random();
         this.setState({ date:[...this.state.date, item] } )
     }

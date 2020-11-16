@@ -4,7 +4,7 @@ import {Route} from "react-router-dom";
 import DropZone from 'react-drop-zone';
 import 'react-drop-zone/dist/styles.css';
 import {DataContext} from "./Content/Data";
-import {Drag} from "./Content/Drag&Drop";
+import {DragDropContainer} from "react-drag-drop-container";
 import "./music/music2.css";
 
 export const Music2 = () => {
@@ -32,15 +32,15 @@ export const Music2 = () => {
                         if( music.path!=='')
                         music.path=`/Music/`;
                         return (
-                            <Drag
+                            <DragDropContainer
                                 key={music.id}
-                                item={music}
+                                dragData={music}
                             >
                                 <Player
                                     prefix={`music`}
                                     music={music}
                                 />
-                            </Drag>
+                            </DragDropContainer>
                         )
                         }
                     )}

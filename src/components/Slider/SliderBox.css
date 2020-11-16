@@ -24,7 +24,9 @@ div>.panel{
     max-width: 400px;
 }
 .panel>div{
-    height: 100%;
+    max-width: 90%;
+    max-height: 397px;
+    overflow-y: auto;
     margin-left: auto;
     margin-right: auto;
 }
